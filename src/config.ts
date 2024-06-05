@@ -26,23 +26,22 @@ interface IConfig {
 export const Config: IConfig = {
   me: {
     name: "Dawson McThay",
-    job: "Tech Founder, Nonprofit President, Business Consultant, Product Designer, and Software Developer",
-    started: "2022-12-01",
-    stack: "TypeScript, Svelte, and Go",
+    job: "Gen-Z Entrepreneur and Account Manager at Coast Incorporated",
+    started: "2024-06-01",
+    stack: "Verizon Wireless and The Game Collective",
     hobby: "gamble my life savings on meme stocks",
-    projectLink: "https://github.com/mcthaydt",
+    projectLink: "https://mcthaydt.netlify.app",
   },
   socials: {
-    website: "https://www.mcthaydt.com",
+    linktree: "https://linktr.ee/mcthaydt",
     twitter: "https://twitter.com/mcthaydt",
-    github: "https://github.com/mcthaydt",
     linkedin: "https://www.linkedin.com/in/dawsonmcthay/",
 
   },
   projects: {
     "Abyss of The Self": {
       url: "https://tropicalsos.itch.io/abyss-of-the-self",
-      tags: ["Game Design", "Narrative Design", "Project Management", "Sales", "Marketing"],
+      tags: ["< 10 Copies Sold", "< $100 Profit"],
     },
   },
   og: {

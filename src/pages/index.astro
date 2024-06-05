@@ -14,10 +14,10 @@ const years = () => {
 import { getCollection } from "astro:content";
 const posts = (await getCollection("posts")).sort(function (
   first: any,
-  second: any
+  second: any,
 ) {
-    return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
-  });
+  return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+});
 ---
 
 <Layout>
@@ -29,31 +29,31 @@ const posts = (await getCollection("posts")).sort(function (
             <h1 class="text-3xl">Hi, I’m {Config.me.name.split(" ")[0]}</h1>
             <h2 class="w-auto sm:w-[85%] md:w-[90%] leading-6">
               I am a <strong class="font-normal text-primary"
-              >{Config.me.job}</strong
+                >{Config.me.job}</strong
               > with over
               <strong class="font-normal text-primary">{years} years</strong> of
               experience. I am currently working with<strong
                 class="font-normal text-primary"
               >
                 {Config.me.stack}</strong
-              >. Outside of entrepreneurship, I like to {Config.me.hobby}.
+              >. Outside of Sales, I like to {Config.me.hobby}.
             </h2>
             <div class="custom-breadcrumbs">
               <ul>
                 {
-                Object.keys(Config.socials).map((social) => (
-        <li>
-                  <a
-                    href={
-                    Config.socials[social as keyof typeof Config.socials]
-                    }
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {social.charAt(0).toUpperCase() + social.slice(1)}
-                  </a>
-                </li>
-                ))
+                  Object.keys(Config.socials).map((social) => (
+                    <li>
+                      <a
+                        href={
+                          Config.socials[social as keyof typeof Config.socials]
+                        }
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        {social.charAt(0).toUpperCase() + social.slice(1)}
+                      </a>
+                    </li>
+                  ))
                 }
               </ul>
             </div>
@@ -81,24 +81,24 @@ const posts = (await getCollection("posts")).sort(function (
             class="text-sm text-primary underline decoration-dashed underline-offset-8"
             target="_self"
             rel="noreferrer"
-          >See all projects
+            >See all projects
           </a>
         </header>
         <section
           class="grid grid-cols-1 gap-4 sm:grid-cols-2 justify-center items-stretch"
         >
           {
-          Object.keys(Config.projects).map((project) => (
-        <FloatingBox
-            title={project}
-            href={
-            Config.projects[project as keyof typeof Config.projects].url
-            }
-            tags={
-            Config.projects[project as keyof typeof Config.projects].tags
-            }
-          />
-          ))
+            Object.keys(Config.projects).map((project) => (
+              <FloatingBox
+                title={project}
+                href={
+                  Config.projects[project as keyof typeof Config.projects].url
+                }
+                tags={
+                  Config.projects[project as keyof typeof Config.projects].tags
+                }
+              />
+            ))
           }
         </section>
       </article>
@@ -110,23 +110,23 @@ const posts = (await getCollection("posts")).sort(function (
             href="/posts"
             class="text-sm text-primary underline decoration-dashed underline-offset-8"
             rel="noreferrer"
-          >See all posts
+            >See all posts
           </a>
         </header>
         <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 mx-auto">
           {
-          posts.map((post: any) => (
-        <FloatingBox
-            title={post.data.title}
-            publishedAt={post.data.publishedAt.toLocaleDateString("en-us", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
-            description={post.data.description}
-            href={"/posts/" + post.slug}
-          />
-          ))
+            posts.map((post: any) => (
+              <FloatingBox
+                title={post.data.title}
+                publishedAt={post.data.publishedAt.toLocaleDateString("en-us", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+                description={post.data.description}
+                href={"/posts/" + post.slug}
+              />
+            ))
           }
         </section>
       </article>
