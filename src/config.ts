@@ -28,7 +28,7 @@ export const Config: IConfig = {
     name: "Dawson McThay",
     job: "Gen-Z Entrepreneur and Account Manager at Coast Incorporated",
     started: "2024-06-01",
-    stack: "Verizon Wireless and The Game Collective",
+    stack: "Verizon Wireless",
     hobby: "gamble my life savings on meme stocks",
     projectLink: "https://mcthaydt.netlify.app",
   },
@@ -36,7 +36,6 @@ export const Config: IConfig = {
     linktree: "https://linktr.ee/mcthaydt",
     twitter: "https://twitter.com/mcthaydt",
     linkedin: "https://www.linkedin.com/in/dawsonmcthay/",
-
   },
   projects: {
     "Abyss of The Self": {
