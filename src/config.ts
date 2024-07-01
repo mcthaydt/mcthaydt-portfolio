@@ -58,7 +58,7 @@ export const Config: IConfig = {
     },
     "717 Interactive": {
       url: "https://717interactive.netlify.app",
-      tags: ["President", "Founder"],
+      tags: ["Project Manager", "Founder"],
     },
   },
   og: {
