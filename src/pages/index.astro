@@ -87,13 +87,13 @@ const posts = (await getCollection("posts")).sort(function (
 
             <article class="flex flex-col gap-8">
                 <header class="flex w-full flex-row justify-between gap-2">
-                    <h3 class="text-lg">Featured projects</h3>
+                    <h3 class="text-lg">My Projects</h3>
                     <a
                         href={Config.me.projectLink}
                         class="text-sm text-primary underline decoration-dashed underline-offset-8"
                         target="_self"
                         rel="noreferrer"
-                        >See all projects
+                        >Featured Project
                     </a>
                 </header>
                 <section
@@ -121,29 +121,32 @@ const posts = (await getCollection("posts")).sort(function (
 
             <article class="flex flex-col gap-8">
                 <header class="flex w-full flex-row justify-between gap-2">
-                    <h3 class="text-lg">Latest posts</h3>
+                    <h3 class="text-lg">My Businesses</h3>
                     <a
-                        href="/posts"
+                        href={Config.me.businessLink}
                         class="text-sm text-primary underline decoration-dashed underline-offset-8"
+                        target="_self"
                         rel="noreferrer"
-                        >See all posts
+                        >Featured Business
                     </a>
                 </header>
-                <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 mx-auto">
+                <section
+                    class="grid grid-cols-1 gap-4 sm:grid-cols-2 justify-center items-stretch"
+                >
                     {
-                        posts.map((post: any) => (
+                        Object.keys(Config.companies).map((company) => (
                             <FloatingBox
-                                title={post.data.title}
-                                publishedAt={post.data.publishedAt.toLocaleDateString(
-                                    "en-us",
-                                    {
-                                        year: "numeric",
-                                        month: "short",
-                                        day: "numeric",
-                                    },
-                                )}
-                                description={post.data.description}
-                                href={"/posts/" + post.slug}
+                                title={company}
+                                href={
+                                    Config.companies[
+                                        company as keyof typeof Config.companies
+                                    ].url
+                                }
+                                tags={
+                                    Config.companies[
+                                        company as keyof typeof Config.companies
+                                    ].tags
+                                }
                             />
                         ))
                     }
